@@ -1,5 +1,4 @@
-#include <Arduino.h>
-#include <ARM_Lib.h>
+#include <ARM_Lib.cpp>
 
 
 //Drive with wheels; first var - speed on Left wheel from 0 to 255, second var - speed on Right wheel from 0 to 255
