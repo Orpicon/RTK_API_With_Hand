@@ -17,7 +17,7 @@ void correct_position(int &pos)
     pos = (pos > MAX_ANGLE) ? MAX_ANGLE : pos;
 }
 
-/* SETUP FOR EXAMPLE CODE 
+ 
 void setup()
 {
     Serial.begin(9600);
@@ -26,9 +26,13 @@ void setup()
     ax12a2.setEndless(0, OFF);
     ax12a2.setEndless(1, OFF);
     ax12a2.setEndless(2, OFF);
-    ax12a2.setEndless(3, OFF);
+    pinMode(DIR_1,OUTPUT);
+    pinMode(DIR_2,OUTPUT);
+    pinMode(PWM_1,OUTPUT);
+    pinMode(PWM_2,OUTPUT);
+    pinMode(LED_Pin, OUTPUT);
 }
-*/
+
 
 void turnAngle(unsigned char id, int angle, int _speed)
 {
