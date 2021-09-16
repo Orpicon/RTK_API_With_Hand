@@ -6,6 +6,11 @@
 #define Broadcast (254u)
 #define MAX_ANGLE (90)
 #define MOTOR_COUNT (3)
+#define DIR_2 5
+#define PWM_2 6
+#define PWM_1 11
+#define DIR_1 10
+#define LED_Pin 13/*Insert pin for LED with PWM support*/
 AX12A ax12a2;
 
 int Cur_angle[MOTOR_COUNT] = {0};
