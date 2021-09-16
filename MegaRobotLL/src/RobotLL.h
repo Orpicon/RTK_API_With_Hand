@@ -1,10 +1,5 @@
 #include <Arduino.h>
 #include <ARM_Lib.h>
-#define DIR_2 5
-#define PWM_2 6
-#define PWM_1 11
-#define DIR_1 10
-#define LED_Pin 13/*Insert PIN for LED with PWM support*/
 
 
 //Drive with wheels; first var - speed on Left wheel from 0 to 255, second var - speed on Right wheel from 0 to 255
