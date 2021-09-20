@@ -1,7 +1,8 @@
-#include <ARM_Lib.cpp>
+#include <RobotLL.cpp>
 #include <Dynamixel_Serial.h>
+#include <ServoTimers.h>
 
-//Drive with wheels; first var - speed on Left wheel from 0 to 255, second var - speed on Right wheel from 0 to 255
+//Drive with wheels; first var - speed on Left wheel from 0 to 255, second var - speed on Rigwdwadwadwa 255
 void moveWheels(int speedL, int speedR){
   
   if(speedL>0){
@@ -53,6 +54,14 @@ void rotateSpike(int ID, int dir){
   Dynamixel.wheel(ID,dir,0x3FF); 
 }
 
+//values from 10 to 170
+void moveServo(int degrees){
+  if(degrees<=10 || degrees>=170){
+    }
+  else{
+ servoArm.write(degrees);
+  }
+}
 /*
 
 ////////////////////////////Функции для проверки двигателей, для использования - раскомментить
