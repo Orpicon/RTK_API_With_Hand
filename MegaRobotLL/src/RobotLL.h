@@ -1,5 +1,5 @@
 #include <ARM_Lib.cpp>
-
+#include <Dynamixel_Serial.h>
 
 //Drive with wheels; first var - speed on Left wheel from 0 to 255, second var - speed on Right wheel from 0 to 255
 void moveWheels(int speedL, int speedR){
@@ -48,31 +48,9 @@ void rotateSecond (int angle){
 turnAngle(2, angle, 100);
 }
 
-
-
-//Drive with Spikes; first var - speed on Left wheel from 0 to 255, second var - speed on Right wheel from 0 to 255
-void moveSpikes(int speedL, int speedR){
-
-  if(speedL>0){
-  digitalWrite(DIR_1,HIGH); 
-  }
-
-  else{
-    digitalWrite(DIR_1,LOW); 
-  }
-
-  if(speedR>0){
-  digitalWrite(DIR_2,HIGH); 
-  }
-
-  else{
-    digitalWrite(DIR_2,LOW); 
-  }
-
-  analogWrite(PWM_1,abs(speedL));
-  
-  analogWrite(PWM_2,abs(speedR));
-  
+//ID - spike ID, dir - 0x00 - LEFT, 0x01 - HIGH
+void rotateSpike(int ID, int dir){
+  Dynamixel.wheel(ID,dir,0x3FF); 
 }
 
 /*

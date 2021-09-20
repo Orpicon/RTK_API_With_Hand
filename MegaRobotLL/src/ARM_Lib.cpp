@@ -1,6 +1,7 @@
 //If u want to set motors count u need to set number in #define MOTOR_COUNT "n", where n - is motor count
 #include "AX12A.h"
 #include <Arduino.h>
+#include <Dynamixel_Serial.h>
 #define DirectionPin (10u)
 #define BaudRate (57600ul)
 #define Broadcast (254u)
@@ -26,6 +27,9 @@ void correct_position(int &pos)
 void setup()
 {
     Serial.begin(9600);
+    Dynamixel.begin(57600);                                    
+    Dynamixel.setDirectionPin(0x02);                           
+    Dynamixel.setMode(0x01, WHEEL, 0, 0);                              
     // Serial3.begin(9600);
     ax12a2.begin(BaudRate, DirectionPin, &Serial2);
     ax12a2.setEndless(0, OFF);
